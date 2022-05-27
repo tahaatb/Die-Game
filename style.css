@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 * {
-  font-family: "Quicksand", sans-serif;
-  box-sizing: border-box;
-  overflow: auto;
+  font-family: 'Nunito', sans-serif;
+  box-sizing: inherit;
+  overflow: hidden;
+  
+
 }
 
 body {
@@ -15,14 +17,15 @@ body {
 }
 
 .main {
-  height: 60vh;
-  width: 60%;
-  background-color: blue;
+  height: 38.5rem;
+  width: 62.5rem;
   position: relative;
-  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  padding: 0;
+  margin: 0;
 }
 .left {
   display: flex;
@@ -52,33 +55,36 @@ body {
 .player {
   position: absolute;
   top: 15%;
-  font-weight: 500;
-  font-size: 30px;
+  font-weight: 600;
+  font-size: 40px;
   color: #1f1f1f;
   padding: 0;
   margin: 0;
 }
 .number {
   position: absolute;
-  top: 30%;
-  font-size: 60px;
+  top: 25%;
+  font-size: 75px;
   font-weight: 500;
   color: #8b2a42;
   padding: 0;
   margin: 0;
 }
 
+
+
 button {
-  height: 30px;
-  width: 90px;
+  height: 50px;
+  width: 200px;
   position: absolute;
   padding: 0;
   margin: 0;
   z-index: 999;
   background-color: rgb(255, 255, 255, 0.6);
-  border-radius: 20px;
+  border-radius: 30px;
   font-weight: 500;
   border: transparent;
+  font-size: 17px;
 }
 
 .new {
@@ -89,5 +95,32 @@ button {
 }
 .hold {
   bottom: 15%;
-  width: 70px;
+  width: 120px;
+}
+.current {
+  height: 6rem;
+  width: 12rem;
+  background-color: #bf2e6a;
+  position: absolute;
+  bottom: 15%;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  
+  
+}
+.current-number {
+  font-size: 35px;
+  transform: translateY(-30PX);
+  
+}
+
+.die {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  position: absolute;
+  top: 35%;
+  
 }
