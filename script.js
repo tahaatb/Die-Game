@@ -24,24 +24,24 @@ roll.addEventListener("click", function () {
     currNum2.textContent = `${currentTotal2}`;
   };
   if (currentPlayer % 2 != 0) {
-    leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
-    rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
     if (rand == 1) {
+      currentPlayer++;
       img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
       currNum1.textContent = `${currentTotal1}`;
-      currentPlayer++;
     } else {
       currentUpdate1();
     }
+    leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
+    rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
   } else {
-    rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
-    leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
     if (rand == 1) {
+      currentPlayer++;
       img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
       currNum1.textContent = `${currentTotal1}`;
-      currentPlayer++;
     } else {
       currentUpdate2();
     }
+    rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
+    leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
   }
 });

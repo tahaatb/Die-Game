@@ -111,3 +111,7 @@ button {
 .current .current-number {
   font-size: 1.5rem;
 }
+
+img {
+  transform: translate(0, -30px);
+}
