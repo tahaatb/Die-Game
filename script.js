@@ -11,6 +11,14 @@ let currentTotal1 = 0;
 let currentTotal2 = 0;
 let currentPlayer = 1;
 
+const rightTurn = function () {
+  leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
+  rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
+};
+const leftTurn = function () {
+  leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
+  rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
+};
 roll.addEventListener("click", function () {
   const rand = Math.floor(Math.random() * 6) + 1;
   let currentUpdate1 = function () {
@@ -28,20 +36,20 @@ roll.addEventListener("click", function () {
       currentPlayer++;
       img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
       currNum1.textContent = `${currentTotal1}`;
+      leftTurn();
     } else {
       currentUpdate1();
+      rightTurn();
     }
-    leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
-    rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
   } else {
     if (rand == 1) {
       currentPlayer++;
       img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
       currNum1.textContent = `${currentTotal1}`;
+      rightTurn();
     } else {
       currentUpdate2();
+      leftTurn();
     }
-    rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
-    leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
   }
 });
