@@ -7,9 +7,13 @@ const currNum1 = document.querySelector(".current-number-1");
 const currNum2 = document.querySelector(".current-number-2");
 const leftHighlight = document.querySelector(".left");
 const rightHighlight = document.querySelector(".right");
+const num1 = document.querySelector(".num1");
+const num2 = document.querySelector(".num2");
 let currentTotal1 = 0;
 let currentTotal2 = 0;
 let currentPlayer = 1;
+let bank1 = 0;
+let bank2 = 0;
 
 const rightTurn = function () {
   leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
@@ -35,6 +39,8 @@ roll.addEventListener("click", function () {
     if (rand == 1) {
       currentPlayer++;
       img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
+      //   num1.textContent = `${currentTotal1}`;
+      currentTotal1 = 0;
       currNum1.textContent = `${currentTotal1}`;
       leftTurn();
     } else {
@@ -45,7 +51,9 @@ roll.addEventListener("click", function () {
     if (rand == 1) {
       currentPlayer++;
       img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
-      currNum1.textContent = `${currentTotal1}`;
+      //   num2.textContent = `${currentTotal2}`;
+      currentTotal2 = 0;
+      currNum2.textContent = `${currentTotal2}`;
       rightTurn();
     } else {
       currentUpdate2();
