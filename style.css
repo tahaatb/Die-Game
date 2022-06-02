@@ -89,14 +89,14 @@ button {
   bottom: 25%;
 }
 .hold {
-  bottom: 15%;
+  bottom: 10%;
   width: 70px;
 }
 
 .current {
   height: 125px;
   width: 200px;
-  background-color: #bf2e34;
+  background-color: #a70e4e;
   position: absolute;
   border-radius: 10px;
   top: 65%;
