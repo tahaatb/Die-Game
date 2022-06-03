@@ -15,13 +15,24 @@ let currentPlayer = 1;
 let bank1 = 0;
 let bank2 = 0;
 
-const rightTurn = function () {
-  leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
-  rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
-};
-const leftTurn = function () {
-  leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
-  rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
+// const rightTurn = function () {
+//   leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
+//   rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
+// };
+// const leftTurn = function () {
+//   leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
+//   rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
+// };
+
+const switchTurn = function () {
+  currentPlayer++;
+  if (currentPlayer % 2 == 0) {
+    rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
+    leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.3)";
+  } else {
+    leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
+    rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.3)";
+  }
 };
 roll.addEventListener("click", function () {
   const rand = Math.floor(Math.random() * 6) + 1;
@@ -37,29 +48,25 @@ roll.addEventListener("click", function () {
   };
   if (currentPlayer % 2 != 0) {
     if (rand == 1) {
-      currentPlayer++;
       img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
       //   num1.textContent = `${currentTotal1}`;
 
       currentTotal1 = 0;
       currNum1.textContent = `${currentTotal1}`;
-      leftTurn();
+      switchTurn();
     } else {
       currentUpdate1();
-      rightTurn();
     }
   } else {
     if (rand == 1) {
-      currentPlayer++;
       img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
       //   num2.textContent = `${currentTotal2}`;
 
       currentTotal2 = 0;
       currNum2.textContent = `${currentTotal2}`;
-      rightTurn();
+      switchTurn();
     } else {
       currentUpdate2();
-      leftTurn();
     }
   }
 });
@@ -87,3 +94,5 @@ hold.addEventListener("click", function () {
     }
   }
 });
+const bool = roll.style;
+console.log(bool);
