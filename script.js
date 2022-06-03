@@ -77,22 +77,23 @@ hold.addEventListener("click", function () {
     num1.textContent = `${bank1}`;
     currentTotal1 = 0;
     currNum1.textContent = `${currentTotal1}`;
-    currentPlayer++;
+
     if (bank1 >= 100) {
       leftHighlight.style.backgroundColor = "#302c2c";
       document.querySelector(".player-1").style.color = "#FFFFFF";
+      document.querySelector(".player-1").style.fontWeight = "600";
     }
   } else {
     bank2 += currentTotal2;
     num2.textContent = `${bank2}`;
     currentTotal2 = 0;
     currNum2.textContent = `${currentTotal2}`;
-    currentPlayer++;
+
     if (bank2 >= 100) {
-      leftHighlight.style.backgroundColor = "#302c2c";
+      rightHighlight.style.backgroundColor = "#302c2c";
       document.querySelector(".player-2").style.color = "#FFFFFF";
+      document.querySelector(".player-2").style.fontWeight = "600";
     }
   }
+  switchTurn();
 });
-const bool = roll.style;
-console.log(bool);
