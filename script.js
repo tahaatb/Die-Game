@@ -9,20 +9,12 @@ const leftHighlight = document.querySelector(".left");
 const rightHighlight = document.querySelector(".right");
 const num1 = document.querySelector(".num1");
 const num2 = document.querySelector(".num2");
+const die = document.querySelector(".die");
 let currentTotal1 = 0;
 let currentTotal2 = 0;
 let currentPlayer = 1;
 let bank1 = 0;
 let bank2 = 0;
-
-// const rightTurn = function () {
-//   leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
-//   rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
-// };
-// const leftTurn = function () {
-//   leftHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.33)";
-//   rightHighlight.style.backgroundColor = "rgb(255, 255, 255, 0.55)";
-// };
 
 const switchTurn = function () {
   currentPlayer++;
@@ -36,6 +28,7 @@ const switchTurn = function () {
 };
 roll.addEventListener("click", function () {
   const rand = Math.floor(Math.random() * 6) + 1;
+  die.classList.remove("hidden");
   let currentUpdate1 = function () {
     currentTotal1 += rand;
     img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
@@ -49,8 +42,6 @@ roll.addEventListener("click", function () {
   if (currentPlayer % 2 != 0) {
     if (rand == 1) {
       img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
-      //   num1.textContent = `${currentTotal1}`;
-
       currentTotal1 = 0;
       currNum1.textContent = `${currentTotal1}`;
       switchTurn();
@@ -60,8 +51,6 @@ roll.addEventListener("click", function () {
   } else {
     if (rand == 1) {
       img.innerHTML = `<img src="images/${rand}-die.png" alt="" /></div>`;
-      //   num2.textContent = `${currentTotal2}`;
-
       currentTotal2 = 0;
       currNum2.textContent = `${currentTotal2}`;
       switchTurn();
@@ -79,7 +68,7 @@ hold.addEventListener("click", function () {
     currNum1.textContent = `${currentTotal1}`;
 
     if (bank1 >= 100) {
-      leftHighlight.style.backgroundColor = "#302c2c";
+      leftHighlight.style.backgroundColor = "rgba(27, 27, 27, 0.3)";
       document.querySelector(".player-1").style.color = "#FFFFFF";
       document.querySelector(".player-1").style.fontWeight = "600";
     }
@@ -90,7 +79,7 @@ hold.addEventListener("click", function () {
     currNum2.textContent = `${currentTotal2}`;
 
     if (bank2 >= 100) {
-      rightHighlight.style.backgroundColor = "#302c2c";
+      rightHighlight.style.backgroundColor = "rgba(27, 27, 27, 0.3)";
       document.querySelector(".player-2").style.color = "#FFFFFF";
       document.querySelector(".player-2").style.fontWeight = "600";
     }
