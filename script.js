@@ -10,6 +10,7 @@ const rightHighlight = document.querySelector(".right");
 const num1 = document.querySelector(".num1");
 const num2 = document.querySelector(".num2");
 const die = document.querySelector(".die");
+const newGame = document.querySelector(".new");
 let currentTotal1 = 0;
 let currentTotal2 = 0;
 let currentPlayer = 1;
@@ -85,4 +86,19 @@ hold.addEventListener("click", function () {
     }
   }
   switchTurn();
+});
+
+newGame.addEventListener("click", function () {
+  currentTotal1 = 0;
+  currNum1.textContent = `${currentTotal1}`;
+  currentTotal2 = 0;
+  currNum2.textContent = `${currentTotal2}`;
+  bank1 = 0;
+  num1.textContent = `${bank1}`;
+  bank2 = 0;
+  num2.textContent = `${bank2}`;
+  if (currentPlayer % 2 == 0) {
+    switchTurn();
+  }
+  currentPlayer = 1;
 });
