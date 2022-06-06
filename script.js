@@ -101,4 +101,9 @@ newGame.addEventListener("click", function () {
     switchTurn();
   }
   currentPlayer = 1;
+  document.querySelector(".player-2").style.color = "#1f1f1fF";
+  document.querySelector(".player-2").style.fontWeight = "500";
+  document.querySelector(".player-1").style.color = "#1f1f1fF";
+  document.querySelector(".player-1").style.fontWeight = "500";
+  die.classList.add("hidden");
 });
